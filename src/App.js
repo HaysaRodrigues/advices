@@ -1,4 +1,4 @@
-import './App.css';
+import './App.scss';
 import { Component } from 'react';
 
 class App extends Component {
@@ -8,11 +8,12 @@ class App extends Component {
     this.state = {
       randomAdvice: ''
     }
+    this.handleClick = this.handleClick.bind(this);
   }
 
   componentDidMount() {
     this.getAdvice();
-}
+  }
 
   getAdvice() {
     fetch('https://api.adviceslip.com/advice')
@@ -20,11 +21,21 @@ class App extends Component {
       .then(data => this.setState({randomAdvice: data.slip.advice}));
   }
 
+  handleClick(event) {
+    event.preventDefault();
+    this.getAdvice();
+  }
+
   render () {
     return (
-      <>
-      {this.state.randomAdvice}
-      </>
+      <div className='App'>
+        <div className='line'></div>
+          <div className='advice'>{this.state.randomAdvice}</div>
+        <div className='line'></div>
+        <button className='button' onClick={this.handleClick}>
+            give me another advice
+        </button>
+      </div>
     );
   }
 }

@@ -1,0 +1,45 @@
+@import 'colors.scss';
+
+.App {
+  text-align: center;
+  margin-left: 25%;
+  margin-right: 25%;
+}
+
+.line {
+  height: 2px;
+  margin-top: 30%;
+  background: $secondary-basil-green;
+}
+
+.advice {
+  font-size: xxx-large;
+  margin-top: 5%; 
+  margin-bottom: -20%;
+  width: 92%;
+  font-family: cursive;
+  color: $basil-orange;
+}
+
+.button {
+  background: $basil-green;
+  border: none;
+  margin-top: 8%;
+  width: 100%;
+  height: 50px;
+  color: $basil-bege;
+  font-weight: 600;
+  border-color: unset;
+}
+
+.button:focus{
+  background-color: $basil-green;
+  border-color: $basil-green;
+  outline-color: $basil-green;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
